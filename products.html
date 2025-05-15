@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Bubble Cosmetics</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+        
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">Bubble<span class="pink">Cosmetics</span></span>
+          </a>
+        </div>
+        
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-icons">
+          <a href="#" class="icon-btn"><i class="fas fa-search"></i></a>
+          <a href="#" class="icon-btn"><i class="fas fa-user"></i></a>
+          <a href="#" class="icon-btn"><i class="fas fa-heart"></i></a>
+          <a href="#" class="icon-btn cart-icon">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero hero-small">
+    <div class="hero-bg">
+      <div class="bubble bubble-1"></div>
+      <div class="bubble bubble-2"></div>
+      <div class="bubble bubble-3"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1>Our <span class="pink">Bubble</span> Products</h1>
+        <p>Discover our joyful, cute, and energetic makeup collection.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Filter -->
+  <section class="products-filter">
+    <div class="container">
+      <div class="filter-container">
+        <div class="filter-options">
+          <div class="filter-dropdown">
+            <button class="filter-btn">
+              <i class="fas fa-filter"></i>
+              <span>Filter</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#" data-filter="all" class="active">All Products</a>
+              <a href="#" data-filter="face">Face</a>
+              <a href="#" data-filter="eyes">Eyes</a>
+              <a href="#" data-filter="lips">Lips</a>
+              <a href="#" data-filter="cheeks">Cheeks</a>
+            </div>
+          </div>
+
+          <div class="filter-dropdown">
+            <button class="filter-btn">
+              <span>Category</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">All Categories</a>
+              <a href="#">Bestsellers</a>
+              <a href="#">New Arrivals</a>
+              <a href="#">Limited Edition</a>
+            </div>
+          </div>
+
+          <div class="filter-dropdown">
+            <button class="filter-btn">
+              <span>Sort By</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#" data-sort="featured" class="active">Featured</a>
+              <a href="#" data-sort="price-low">Price: Low to High</a>
+              <a href="#" data-sort="price-high">Price: High to Low</a>
+              <a href="#" data-sort="name">Name: A to Z</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="search-container">
+          <form class="search-form">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search products..." id="product-search">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Categories -->
+  <section class="product-categories">
+    <div class="container">
+      <h2>Categories</h2>
+
+      <div class="categories-grid">
+        <div class="category-item" data-aos="fade-up">
+          <div class="category-image">
+            <img src="https://placehold.co/200x200/f0f9ff/569DAA?text=Face" alt="Face">
+          </div>
+          <h3>Face</h3>
+        </div>
+
+        <div class="category-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="category-image">
+            <img src="https://placehold.co/200x200/f0f9ff/569DAA?text=Eyes" alt="Eyes">
+          </div>
+          <h3>Eyes</h3>
+        </div>
+
+        <div class="category-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="category-image">
+            <img src="https://placehold.co/200x200/f0f9ff/569DAA?text=Lips" alt="Lips">
+          </div>
+          <h3>Lips</h3>
+        </div>
+
+        <div class="category-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="category-image">
+            <img src="https://placehold.co/200x200/f0f9ff/569DAA?text=Cheeks" alt="Cheeks">
+          </div>
+          <h3>Cheeks</h3>
+        </div>
+
+        <div class="category-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="category-image">
+            <img src="https://placehold.co/200x200/f0f9ff/569DAA?text=Sets" alt="Sets">
+          </div>
+          <h3>Sets</h3>
+        </div>
+
+        <div class="category-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="category-image">
+            <img src="https://placehold.co/200x200/f0f9ff/569DAA?text=Tools" alt="Tools">
+          </div>
+          <h3>Tools</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="product-section">
+    <div class="container">
+      <h2>Featured Products</h2>
+
+      <div class="product-grid">
+        <div class="product-card" data-aos="fade-up" data-category="face">
+          <div class="product-image">
+            <img src="https://placehold.co/400x400/f0f9ff/569DAA?text=Highlighter" alt="Bubble Glow Highlighter">
+            <span class="product-tag">Bestseller</span>
+            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+          </div>
+          <div class="product-content">
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(120)</span>
+            </div>
+            <h3>Bubble Glow Highlighter</h3>
+            <p>Add a radiant glow to your complexion</p>
+            <div class="product-actions">
+              <span class="product-price">$18.99</span>
+              <button class="btn btn-small">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100" data-category="lips">
+          <div class="product-image">
+            <img src="https://placehold.co/400x400/f0f9ff/569DAA?text=Lip+Gloss" alt="Dreamy Lip Gloss">
+            <span class="product-tag">New</span>
+            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+          </div>
+          <div class="product-content">
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(86)</span>
+            </div>
+            <h3>Dreamy Lip Gloss</h3>
+            <p>Shimmery gloss for plump, juicy lips</p>
+            <div class="product-actions">
+              <span class="product-price">$14.99</span>
+              <button class="btn btn-small">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="200" data-category="face">
+          <div class="product-image">
+            <img src="https://placehold.co/400x400/f0f9ff/569DAA?text=Foundation" alt="Cloud Soft Foundation">
+            <span class="product-tag">Popular</span>
+            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+          </div>
+          <div class="product-content">
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(152)</span>
+            </div>
+            <h3>Cloud Soft Foundation</h3>
+            <p>Lightweight coverage for all skin types</p>
+            <div class="product-actions">
+              <span class="product-price">$24.99</span>
+              <button class="btn btn-small">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="300" data-category="eyes">
+          <div class="product-image">
+            <img src="https://placehold.co/400x400/f0f9ff/569DAA?text=Eye+Palette" alt="Sparkle Eye Palette">
+            <span class="product-tag">Limited</span>
+            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+          </div>
+          <div class="product-content">
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(94)</span>
+            </div>
+            <h3>Sparkle Eye Palette</h3>
+            <p>Vibrant colors for creative eye looks</p>
+            <div class="product-actions">
+              <span class="product-price">$32.99</span>
+              <button class="btn btn-small">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Products -->
+  <section class="product-section">
+    <div class="container">
+      <h2>All Products</h2>
+
+      <div class="product-grid" id="products-container">
+        <!-- Products will be dynamically loaded here via JavaScript -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="pagination-btn" disabled>Previous</button>
+        <button class="pagination-btn active">1</button>
+        <button class="pagination-btn">2</button>
+        <button class="pagination-btn">3</button>
+        <button class="pagination-btn">4</button>
+        <button class="pagination-btn">5</button>
+        <button class="pagination-btn">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>Join Our Bubble Family</h2>
+        <p>Subscribe to our newsletter for exclusive offers, tutorials, and beauty tips.</p>
+        
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-accent">Subscribe</button>
+        </form>
+        
+        <p class="newsletter-terms">
+          By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Bubble Cosmetics</h3>
+          <p>Joyful, cute, and energetic makeup for everyone.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html">Bestsellers</a></li>
+            <li><a href="products.html">New Arrivals</a></li>
+            <li><a href="products.html">Special Offers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Bubble Cosmetics. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>
