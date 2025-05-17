@@ -1,157 +1,159 @@
 // Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileNav = document.querySelector('.mobile-nav');
-    
-    if (mobileMenuBtn && mobileNav) {
-      mobileMenuBtn.addEventListener('click', function() {
-        mobileNav.classList.toggle('active');
-      });
-    }
-  
-    // Set current year in footer
-    const yearSpan = document.getElementById('current-year');
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
-  
-    // Add animations for elements as they scroll into view
-    const animateElements = function() {
-      const elements = document.querySelectorAll('[data-aos]');
-      
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementPosition < windowHeight * 0.85) {
-          element.classList.add('animated');
-          
-          // Handle delay
-          const delay = element.getAttribute('data-aos-delay');
-          if (delay) {
-            setTimeout(() => {
-              element.style.opacity = '1';
-              element.style.transform = 'translateY(0)';
-            }, parseInt(delay));
-          } else {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-          }
-        }
-      });
-    };
-  
-    // Initial animation check
-    setTimeout(animateElements, 100);
-    
-    // Trigger animations on scroll
-    window.addEventListener('scroll', animateElements);
-  
-    // FAQ accordion functionality
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    if (faqItems.length > 0) {
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-          // Close all other items
-          faqItems.forEach(otherItem => {
-            if (otherItem !== item && otherItem.classList.contains('active')) {
-              otherItem.classList.remove('active');
-            }
-          });
-          
-          // Toggle current item
-          item.classList.toggle('active');
-        });
-      });
-    }
-  
-    // Add to cart functionality
-    const addToCartButtons = document.querySelectorAll('.product-actions .btn');
-    const cartCount = document.querySelector('.cart-count');
-    
-    if (addToCartButtons.length > 0 && cartCount) {
-      let count = 0;
-      
-      addToCartButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          count++;
-          cartCount.textContent = count;
-          
-          // Add animation effect to button
-          this.innerHTML = 'Added! <i class="fas fa-check"></i>';
-          this.classList.add('added');
-          
-          // Reset button after 2 seconds
+document.addEventListener("DOMContentLoaded", () => {
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById("mobile-menu-toggle")
+  const mobileNav = document.getElementById("mobile-nav")
+
+  if (mobileMenuBtn && mobileNav) {
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("active")
+    })
+  }
+
+  // Search toggle
+  const searchToggle = document.getElementById("search-toggle")
+  const searchOverlay = document.getElementById("search-overlay")
+  const closeSearch = document.getElementById("close-search")
+
+  if (searchToggle && searchOverlay && closeSearch) {
+    searchToggle.addEventListener("click", (e) => {
+      e.preventDefault()
+      searchOverlay.classList.add("active")
+      document.getElementById("search-input").focus()
+    })
+
+    closeSearch.addEventListener("click", () => {
+      searchOverlay.classList.remove("active")
+    })
+
+    // Close search on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && searchOverlay.classList.contains("active")) {
+        searchOverlay.classList.remove("active")
+      }
+    })
+  }
+
+  // Enhanced search functionality
+  const searchForm = document.querySelector(".search-form")
+  if (searchForm) {
+    searchForm.addEventListener("submit", (e) => {
+      e.preventDefault()
+      const searchTerm = document.getElementById("search-input").value.trim()
+      if (searchTerm) {
+        // Store search term in sessionStorage
+        sessionStorage.setItem("searchTerm", searchTerm)
+        // Redirect to products page
+        window.location.href = "products.html"
+      }
+    })
+  }
+
+  // User account icon functionality
+  const userIcon = document.querySelector(".header-icons .icon-btn:nth-child(2)")
+  if (userIcon) {
+    userIcon.addEventListener("click", (e) => {
+      e.preventDefault()
+      // For now, just show an alert
+      alert("User account functionality coming soon!")
+      // In a real implementation, you would show a login/register modal
+    })
+  }
+
+  // Set current year in footer
+  const yearSpan = document.getElementById("current-year")
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear().toString()
+  }
+
+  // Add animations for elements as they scroll into view
+  const animateElements = () => {
+    const elements = document.querySelectorAll("[data-aos]")
+
+    elements.forEach((element) => {
+      const elementPosition = element.getBoundingClientRect().top
+      const windowHeight = window.innerHeight
+
+      if (elementPosition < windowHeight * 0.85) {
+        element.classList.add("animated")
+
+        // Handle delay
+        const delay = element.getAttribute("data-aos-delay")
+        if (delay) {
           setTimeout(() => {
-            this.innerHTML = 'Add to Cart';
-            this.classList.remove('added');
-          }, 2000);
-        });
-      });
-    }
-  
-    // Form validation
-    const contactForm = document.getElementById('contact-form');
-    
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Simple validation
-        let valid = true;
-        const inputs = contactForm.querySelectorAll('input, textarea');
-        
-        inputs.forEach(input => {
-          if (!input.value.trim()) {
-            valid = false;
-            input.classList.add('error');
-          } else {
-            input.classList.remove('error');
-          }
-        });
-        
-        if (valid) {
-          // Show success message (in a real application, you would submit the form data)
-          alert('Thank you for your message! We will get back to you soon.');
-          contactForm.reset();
+            element.style.opacity = "1"
+            element.style.transform = "translateY(0)"
+          }, Number.parseInt(delay))
         } else {
-          alert('Please fill in all required fields.');
+          element.style.opacity = "1"
+          element.style.transform = "translateY(0)"
         }
-      });
-    }
-  
-    // Newsletter form submission
-    const newsletterForms = document.querySelectorAll('.newsletter-form');
-    
-    if (newsletterForms.length > 0) {
-      newsletterForms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          const emailInput = form.querySelector('input[type="email"]');
-          
-          if (emailInput && emailInput.value.trim()) {
-            alert('Thank you for subscribing to our newsletter!');
-            form.reset();
-          } else {
-            alert('Please enter a valid email address.');
-          }
-        });
-      });
-    }
-  });
-  
+      }
+    })
+  }
+
+  // Initial animation check
+  setTimeout(animateElements, 100)
+
+  // Trigger animations on scroll
+  window.addEventListener("scroll", animateElements)
+
+  // Newsletter form submission
+  const newsletterForms = document.querySelectorAll("#newsletter-form")
+
+  if (newsletterForms.length > 0) {
+    newsletterForms.forEach((form) => {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault()
+
+        const emailInput = form.querySelector("#newsletter-email")
+        const successMessage = document.getElementById("newsletter-success")
+
+        if (emailInput && emailInput.value.trim() && successMessage) {
+          // In a real application, you would submit the form data to a server
+          console.log("Newsletter subscription:", emailInput.value)
+
+          // Show success message
+          successMessage.classList.add("active")
+
+          // Hide form
+          form.style.display = "none"
+
+          // Reset form
+          form.reset()
+
+          // Hide success message and show form after 5 seconds
+          setTimeout(() => {
+            successMessage.classList.remove("active")
+            form.style.display = "flex"
+          }, 5000)
+        }
+      })
+    })
+  }
+
   // Add animation classes to elements with data-aos attribute
-  const elementsToAnimate = document.querySelectorAll('[data-aos]');
-  
-  elementsToAnimate.forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  });
+  const elementsToAnimate = document.querySelectorAll("[data-aos]")
+
+  elementsToAnimate.forEach((element) => {
+    element.style.opacity = "0"
+    element.style.transform = "translateY(20px)"
+    element.style.transition = "opacity 0.5s ease, transform 0.5s ease"
+  })
+
+  // Floating Go to Top Button
+  const goToTopFloatBtn = document.getElementById("goToTopFloatBtn");
+  if (goToTopFloatBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        goToTopFloatBtn.classList.add("show");
+      } else {
+        goToTopFloatBtn.classList.remove("show");
+      }
+    });
+
+    goToTopFloatBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+})

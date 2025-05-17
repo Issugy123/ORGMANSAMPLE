@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Bubble Cosmetics</title>
+  <title>Product Detail - Bubble Cosmetics</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/product-styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/product-detail.css">
 </head>
 <body>
   <!-- Header -->
@@ -26,8 +28,8 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
         
@@ -49,8 +51,8 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 
@@ -83,135 +85,57 @@
     </div>
   </div>
 
-  <!-- Hero Section -->
-  <section class="hero hero-small">
-    <div class="hero-bg">
-      <div class="bubble bubble-1"></div>
-      <div class="bubble bubble-2"></div>
-      <div class="bubble bubble-3"></div>
-    </div>
+  <!-- Breadcrumb -->
+  <section class="breadcrumb">
     <div class="container">
-      <div class="hero-content fade-in">
-        <h1>Get In <span class="pink">Touch</span></h1>
-        <p>We'd love to hear from you! Reach out with any questions, feedback, or just to say hello.</p>
-      </div>
+      <ul class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><span id="product-breadcrumb-name">Product Name</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- Contact Information -->
-  <section class="contact-info">
+  <!-- Product Detail -->
+  <section class="product-detail-container">
     <div class="container">
-      <div class="info-grid">
-        <div class="info-card" data-aos="fade-up">
-          <div class="info-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <h3>Email Us</h3>
-          <p>hello@bubblecosmetics.com</p>
-        </div>
-
-        <div class="info-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="info-icon">
-            <i class="fas fa-phone-alt"></i>
-          </div>
-          <h3>Call Us</h3>
-          <p>+1 (555) 123-4567</p>
-        </div>
-
-        <div class="info-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="info-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <h3>Visit Us</h3>
-          <p>123 Bubble Street, New York, NY 10001</p>
-        </div>
-
-        <div class="info-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="info-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <h3>Business Hours</h3>
-          <p>Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</p>
-        </div>
+      <div class="product-detail-grid" id="product-detail-container">
+        <!-- Product detail will be dynamically loaded here via JavaScript -->
       </div>
-    </div>
-  </section>
 
-  <!-- Contact Form and Map -->
-  <section class="contact-form-section">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-form-container slide-in-left">
-          <h2>Send Us a Message</h2>
-          <form id="contact-form" class="contact-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" placeholder="john@example.com" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Your message here..." rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              Send Message
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </form>
-          <div class="success-message" id="form-success">
-            <i class="fas fa-check-circle"></i>
-            <p>Thank you for your message! We will get back to you soon.</p>
+      <!-- Product Tabs -->
+      <div class="product-detail-tabs">
+        <div class="product-detail-tab-buttons">
+          <button class="product-detail-tab-button active" data-tab="description">Description</button>
+          <button class="product-detail-tab-button" data-tab="details">Details</button>
+          <button class="product-detail-tab-button" data-tab="reviews">Reviews</button>
+        </div>
+
+        <div class="product-detail-tab-content active" id="description-tab">
+          <div id="product-description-content">
+            <!-- Product description will be dynamically loaded here -->
           </div>
         </div>
 
-        <div class="contact-map slide-in-right">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596552044!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1620841159177!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+        <div class="product-detail-tab-content" id="details-tab">
+          <div id="product-details-content">
+            <!-- Product details will be dynamically loaded here -->
+          </div>
+        </div>
+
+        <div class="product-detail-tab-content" id="reviews-tab">
+          <div id="product-reviews-content">
+            <!-- Product reviews will be dynamically loaded here -->
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- FAQ Section -->
-  <section class="faq-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Frequently Asked Questions</h2>
-        <p>Find answers to our most commonly asked questions.</p>
-      </div>
-
-      <div class="faq-container" id="faq-container">
-        <!-- FAQs will be dynamically loaded here via JavaScript -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Social Media -->
-  <section class="social-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Connect With Us</h2>
-        <p>Follow us on social media for beauty tips, product updates, and more!</p>
-      </div>
-
-      <div class="social-grid">
-        <a href="#" class="social-item" data-aos="zoom-in">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#" class="social-item" data-aos="zoom-in" data-aos-delay="100">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="social-item" data-aos="zoom-in" data-aos-delay="200">
-          <i class="fab fa-twitter"></i>
-        </a>
+      <!-- Related Products -->
+      <div class="related-products">
+        <h2>You May Also Like</h2>
+        <div class="product-grid" id="related-products-container">
+          <!-- Related products will be dynamically loaded here -->
+        </div>
       </div>
     </div>
   </section>
@@ -220,7 +144,7 @@
   <section class="newsletter">
     <div class="container">
       <div class="newsletter-content">
-        <h2>Stay Updated</h2>
+        <h2>Join Our Bubble Family</h2>
         <p>Subscribe to our newsletter for exclusive offers, tutorials, and beauty tips.</p>
         
         <form class="newsletter-form" id="newsletter-form">
@@ -296,8 +220,8 @@
   </button>
 
   <script src="js/script.js"></script>
-  <script src="js/contact.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/product-detail.js"></script>
   <script src="js/cart.js"></script>
 </body>
 </html>
-``` 
